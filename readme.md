@@ -1,4 +1,4 @@
-## webpack学习+demo
+## webpack整理+demo
 
 1. 单文件入口
 2. 多文件入口
