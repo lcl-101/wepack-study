@@ -19501,7 +19501,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(26);
+var _app = __webpack_require__(26);
+
+var _app2 = _interopRequireDefault(_app);
 
 var _react = __webpack_require__(3);
 
@@ -19520,6 +19522,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 console.log('lcl+' + _2.default);
+console.log('lcl+' + _app2.default);
 
 var Demo = function (_Component) {
   _inherits(Demo, _Component);
@@ -19538,7 +19541,7 @@ var Demo = function (_Component) {
         { className: '' },
         _react2.default.createElement(
           'h1',
-          { className: 'demo' },
+          { className: _app2.default.demo },
           'demo5'
         ),
         _react2.default.createElement('img', { src: _2.default, alt: '' })
@@ -19575,8 +19578,8 @@ var update = __webpack_require__(29)(content, options);
 if(content.locals) module.exports = content.locals;
 
 if(false) {
-	module.hot.accept("!!../../node_modules/css-loader/index.js!./app.css", function() {
-		var newContent = require("!!../../node_modules/css-loader/index.js!./app.css");
+	module.hot.accept("!!../../node_modules/css-loader/index.js??ref--1-1!./app.css", function() {
+		var newContent = require("!!../../node_modules/css-loader/index.js??ref--1-1!./app.css");
 
 		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 
@@ -19610,10 +19613,12 @@ exports = module.exports = __webpack_require__(28)(false);
 
 
 // module
-exports.push([module.i, "\nhtml {\n  box-sizing: border-box;\n  -ms-text-size-adjust: 100%;\n  -webkit-text-size-adjust: 100%;\n}\n\n*, *:before, *:after {\n  box-sizing: inherit;\n}\n\nbody {\n  margin: 0;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\nh1, h2, h3, h4, h5, h6, p, ul {\n  margin: 0;\n  padding: 0;\n}\n\n\n.demo{\n  background: #ccc;\n  color: #333;\n}\n", ""]);
+exports.push([module.i, "\nhtml {\n  box-sizing: border-box;\n  -ms-text-size-adjust: 100%;\n  -webkit-text-size-adjust: 100%;\n}\n\n*, *:before, *:after {\n  box-sizing: inherit;\n}\n\nbody {\n  margin: 0;\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\nh1, h2, h3, h4, h5, h6, p, ul {\n  margin: 0;\n  padding: 0;\n}\n\n\n._246HsEQijyIMv5p-upwwY2{\n  background: #ccc;\n  color: #333;\n}\n", ""]);
 
 // exports
-
+exports.locals = {
+	"demo": "_246HsEQijyIMv5p-upwwY2"
+};
 
 /***/ }),
 /* 28 */
