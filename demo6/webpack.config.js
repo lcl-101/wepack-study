@@ -43,9 +43,7 @@ module.exports = {
   plugins:[
     new UglifyJSPlugin({
       uglifyOptions:{
-        compress:{
-          warnings: false
-        },
+        warnings: false,
         ie8: true,
       }
     })
