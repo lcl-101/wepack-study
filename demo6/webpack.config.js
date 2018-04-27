@@ -13,7 +13,7 @@ const DefinePlugin = new webpack.DefinePlugin({
 console.log(DefinePlugin.definitions);
 console.log(process.env.NODE_ENV);
 console.log(process.env);
-if(DefinePlugin.definitions.__DEV__){
+if(process.env.NODE_ENV == 'dev'){
   console.log('this is dev env');
 }else {
   console.log('this is prod env');
