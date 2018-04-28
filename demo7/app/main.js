@@ -6,9 +6,9 @@ ReactDom.render(
   document.getElementById('box')
 );
 
-require.ensure(['./compontent/list/a'], function(require) {
-  var content = require('./compontent/list/a');
-  document.open();
-  document.write('<h1>' + content + '</h1>');
-  document.close();
-});
+// require.ensure(['./compontent/list/a'], function(require) {
+//   var content = require('./compontent/list/a');
+//   document.open();
+//   document.write('<h1>' + content + '</h1>');
+//   document.close();
+// });
