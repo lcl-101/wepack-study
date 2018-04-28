@@ -2,7 +2,7 @@
 > __dirname是node.js中的一个全局变量，它指向当前执行脚本所在的目录。
 
 <pre>
-<p class="protip">         
+<p style="text-align:center;">         
           .----.
        _.'__    `.
    .--($)($$)---/#\
