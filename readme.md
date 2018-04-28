@@ -1,6 +1,24 @@
 ## webpack整理+demo
 > __dirname是node.js中的一个全局变量，它指向当前执行脚本所在的目录。
 
+
+<pre style="width:200px;margin:0 auto;font-size:14px;background:#fff;border:0;color:#555;font-family: Monaco,Menlo,Consolas,&quot;Courier New&quot;,FontAwesome,monospace;text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased;">          
+          .----.
+       _.'__    `.
+   .--($)($$)---/#\
+ .' @          /###\
+ :         ,   #####
+  `-..__.-' _.-\###/
+        `;_:    `"'
+      .'"""""`.
+     /,  ya ,\\
+    //  haha!  \\
+    `-._______.-'
+    ___`. | .'___
+   (______|______)
+</pre>
+
+
 1. 单文件入口
 2. 多文件入口
 3. bable-loader，react，jsx语法识别
