@@ -1,6 +1,5 @@
 ## webpack整理+demo
-> 作者：李成龙 554675188@qq.com
-
+> 作者：李成龙 554675188@qq.com <br/>
 > ps: changeLog 注明更新内容
 
 
