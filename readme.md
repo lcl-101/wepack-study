@@ -29,7 +29,7 @@ npm install
 
 > 启动本地服务
 
-## 安装了全局webpack 和 webpack-dev-server
+#### 安装了全局webpack 和 webpack-dev-server
 
 ```
 1. cd demo1
@@ -37,7 +37,7 @@ npm install
 3. webpack-dev-server
 ```
 
-## 没有安装全局webpack 和 webpack-dev-server
+#### 没有安装全局webpack 和 webpack-dev-server
 
 ```
 1. cd demo1
