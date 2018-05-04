@@ -28,6 +28,8 @@ const CommonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin({  //提取�
     name: ['vendor'],
 })
 
+const HotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin() //热替换
+
 module.exports = {
   entry: {
     vendors,
@@ -42,7 +44,8 @@ module.exports = {
     contentBase:'./app',
     historyApiFallback: true,
     inline: true,
-    open: true
+    open: true,
+    hot: true
   },
   module:{
     rules:[
@@ -72,6 +75,7 @@ module.exports = {
   plugins:[
     UglifyJSPlugins,
     HTMLWebpackPlugins,
-    CommonsChunkPlugin
+    CommonsChunkPlugin,
+    HotModuleReplacementPlugin
   ]
 }
