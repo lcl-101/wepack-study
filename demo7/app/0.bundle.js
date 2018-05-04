@@ -1,1 +1,0 @@
-webpackJsonp([0],{12:function(o,e,s){"use strict";o.exports="Hello World"}});
