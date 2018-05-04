@@ -53,3 +53,4 @@ npm install
 5. demo5: 将require导入更改为import, 加入图片处理style-loader和url-loader,开启CSS Module全局变量
 6. demo6: 加入UglifyJSPlugin代码压缩,DefinePlugin设置环境变量 例如mac env NODE_ENV='product' ../node_modules/.bin/webpack' 或者 env NODE_ENV=production ../node_modules/.bin/webpack --progress --colors 可以显示打包进度
 7. demo7: 测试require.ensure按需加载（require.ensure在webpack3.5.5以后已经不在使用了），代码分片并异步加载分片后的代码，CommonsChunkPlugin提取出第三方库
+8. demo8: 完整的项目目录搭建（完善中，基本目录构建已经搭完）
