@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Header from './component/Header/Header';
+import { BrowserRouter } from 'react-router-dom'
+import App from './component/App/App';
 import style from './css/index.css';
 ReactDom.render(
-  <Header />,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById('box')
 );
