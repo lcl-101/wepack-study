@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
-import App from './component/App/App';
+import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router';
+import Header from './component/Header/Header';
+import Dashboard from './component/Dashboard/Dashboard';
 import style from './css/index.css';
-ReactDom.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById('box')
-);
+
+const routes = {
+  path: '/views/index/*',
+  component: Header,
+  childRoutes: [
+    { path: '/Dashboard', component: Dashboard }
+  ]
+}
+
+ReactDom.render(<Router history={browserHistory} routes={routes} />, document.getElementById('box'));

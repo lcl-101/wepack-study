@@ -10,6 +10,11 @@ const vendor = [
   'react',
   'react-dom'
 ];
+
+//生成环境
+var NODE_ENV = process.env.NODE_ENV;
+var isProduction = NODE_ENV ==='production' ? true : false;
+
 const ROOT_PATH = path.resolve(__dirname);
 const PATH_DIST = path.resolve(__dirname,'dist');
 const PATH_VIEW = path.resolve(__dirname,'src/view');
@@ -22,16 +27,11 @@ const CommonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin({  //提取�
     minChunks: Infinity
 })
 
-const UglifyJSPlugins = new UglifyJSPlugin({
-  uglifyOptions:{
-    warnings: false,
-    ie8: true
-  },
-  sourceMap: true
+const DefinePlugin = new webpack.DefinePlugin({
+    "process.env": {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+    }
 });
-const ExCSS = new ExtractTextPlugin("[name]/[name].[contenthash].css");
-const OptimizeCSSAssets = new OptimizeCSSPlugin();
-
 
 var entryTpl = {}; //存放模板对象 用于跟入口js对应
 var plugins = []; //存放动态生成的插件数组
@@ -44,11 +44,14 @@ enterHtml.forEach(function(filePath){
   var filename = filePath.substring(filePath.lastIndexOf('/')+1,filePath.lastIndexOf('.'));
   var conf = {
     template: filePath,
-    filename: 'views/' + entryPath + '/'+filename + '.html'
+    filename: 'views/' + entryPath + '/'+filename + '.html',
+    chunks:['vender',filename]    //chunks就是你在entry定义的入口的key
   }
   plugins.push(new HTMLWebpackPlugin(conf));
   entryTpl[filename] = filePath;
 })
+
+//js
 const enterJsFile = glob.sync(SRC_VIEW + '/**/*.js');
 const enterJs = {};
 enterJsFile.forEach(function(filePath){
@@ -57,6 +60,33 @@ enterJsFile.forEach(function(filePath){
     enterJs[filename] = filePath;
   }
 })
+
+//css
+var ExCSS = '';
+if(isProduction){
+  ExCSS = new ExtractTextPlugin("[name]/[name].[contenthash].css");
+  const OptimizeCSSAssets = new OptimizeCSSPlugin();
+  const UglifyJSPlugins = new UglifyJSPlugin({
+    uglifyOptions:{
+      warnings: false,
+      ie8: true,
+      output: {
+        comments: false,  // remove all comments
+      },
+      compress: {
+        warnings: false
+      },
+    },
+    sourceMap: true
+  });
+
+  plugins.push(OptimizeCSSAssets,UglifyJSPlugins);
+}else {
+  ExCSS = new ExtractTextPlugin('[name]/[name].css');
+}
+
+console.log(enterJs);
+
 module.exports = {
   entry:Object.assign(enterJs,{
     'vender': ['react','react-dom']
@@ -67,9 +97,10 @@ module.exports = {
     inline: true,
     open: true
   },
+  devtool: (isProduction ? '' : 'source-map'),
   output: {
     path:PATH_DIST,
-    filename:'[name]/[name].[chunkhash].bundle.js'
+    filename:isProduction?'[name]/[name].[chunkhash].bundle.js':'[name]/[name].bundle.js'
   },
   module:{
     rules:[
@@ -91,9 +122,8 @@ module.exports = {
     ]
   },
   plugins:[
-    UglifyJSPlugins,
     CommonsChunkPlugin,
     ExCSS,
-    OptimizeCSSAssets
+    DefinePlugin
   ].concat(plugins)
 }
