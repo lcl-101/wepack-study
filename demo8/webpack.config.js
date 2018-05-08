@@ -95,7 +95,15 @@ module.exports = {
     contentBase:"./dist",
     historyApiFallback: true,
     inline: true,
-    open: true
+    open: true,
+    proxy: {
+     '/': {
+        bypass: function (req, res, proxyOptions) {
+         console.log('Skipping proxy for browser request.')
+         return '/views/index/index.html'
+        }
+      }
+    }
   },
   devtool: (isProduction ? '' : 'source-map'),
   output: {

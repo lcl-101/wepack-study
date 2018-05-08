@@ -2892,7 +2892,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var routes = {
   path: '/views/index/*',
   component: _Header2.default,
-  indexRoute: { component: _Header2.default },
   childRoutes: [{ path: '/Dashboard', component: _Dashboard2.default }]
 };
 

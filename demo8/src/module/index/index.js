@@ -9,7 +9,7 @@ const routes = {
   path: '/views/index/*',
   component: Header,
   childRoutes: [
-    { path: '/Dashboard', component: Dashboard }
+    { path: '/Dashboard', component: Dashboard}
   ]
 }
 
