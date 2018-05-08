@@ -8,7 +8,8 @@ const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin') //把抽
 
 const vendor = [
   'react',
-  'react-dom'
+  'react-dom',
+  'react-router'
 ];
 
 //生成环境
@@ -89,7 +90,7 @@ console.log(enterJs);
 
 module.exports = {
   entry:Object.assign(enterJs,{
-    'vender': ['react','react-dom']
+    'vender': vendor
   }),
   devServer:{
     contentBase:"./dist",
