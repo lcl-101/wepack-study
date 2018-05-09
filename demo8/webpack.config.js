@@ -94,7 +94,7 @@ module.exports = {
   }),
   devServer:{
     contentBase:"./dist",
-    historyApiFallback: true,
+    historyApiFallback: true, // 不跳转，依赖于HTML5 history API ，如果设置为true，所有的跳转将指向index.html
     inline: true,
     open: true,
     proxy: {
