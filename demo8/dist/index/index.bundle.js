@@ -86,12 +86,11 @@ var _index2 = _interopRequireDefault(_index);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var routes = {
-  path: '/views/index/*',
+  path: '/', // 访问 '/' 路径，component组件 App 就会加载到 document.getElementById('app')
   component: _Header2.default,
   childRoutes: [{ path: '/Dashboard', component: _Dashboard2.default }]
-};
-
-_reactDom2.default.render(_react2.default.createElement(_reactRouter.Router, { history: _reactRouter.browserHistory, routes: routes }), document.getElementById('box'));
+  // hashHistory:表示路由切换是由URL中'/#/'的'#'部分发生hash变化来触发，例: http://localhost:8080/#/
+};_reactDom2.default.render(_react2.default.createElement(_reactRouter.Router, { history: _reactRouter.hashHistory, routes: routes }), document.getElementById('box'));
 
 /***/ }),
 
