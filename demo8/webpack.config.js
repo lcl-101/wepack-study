@@ -100,7 +100,8 @@ module.exports = {
     proxy: {
      '/': {
         bypass: function (req, res, proxyOptions) {
-
+          console.log('Skipping proxy for browser request.')
+          return '/views/index/index.html'
         }
       }
     }
