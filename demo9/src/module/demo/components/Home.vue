@@ -1,8 +1,6 @@
 <template>
-    <div id="app">
-        <div class="">
-          hello
-        </div>
+    <div class="">
+      html
     </div>
 </template>
 <script>

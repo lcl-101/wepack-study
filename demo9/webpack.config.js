@@ -15,9 +15,16 @@ const PATH_VIEW = path.resolve(__dirname,'src/view');
 
 //导出通用js
 var vendor = [
-
+  'vue',
+  'vue-router'
 ];
 
+const CommonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin({  //提取出第三方库到vendor.bundle.js
+    name: ['vender'],
+    filename:'[name]/[name].js',
+    // children:true,
+    minChunks: Infinity
+})
 
 var plugins = []; //存放动态生成的插件数组
 
@@ -30,7 +37,10 @@ plugins.push(new HTMLWebpackPlugin(conf));
 console.log(PATH_VIEW);
 
 module.exports = {
-  entry: __dirname + '/src/module/demo/demo.js',
+  entry: {
+    'index': __dirname + '/src/module/demo/demo.js',
+    'vender': vendor
+  },
   output: {
     path: __dirname+ '/dist/',
     filename:'[name]/[name].bundle.js'
@@ -67,7 +77,10 @@ module.exports = {
       }
     ]
   },
+  resolve: { //定义能够被打包的文件，文件后缀名
+      extensions: ['.js','.jsx','.json','.css','vue']
+  },
   plugins:[
-
+    CommonsChunkPlugin
   ].concat(plugins)
 }
