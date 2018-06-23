@@ -27,11 +27,15 @@ const actions = {
         .then(function(res){
           console.log(res);
           if(res.status == 200){
-            commit('getList',res.data);
             resolve(res);
+            commit('getList',res.data);
+          }else {
+            reject(res);
+            commit('getList','');
           }
         }).catch(function (error) {
-          console.log(error);
+          reject(error);
+          commit('getList','');
         });
     })
   }

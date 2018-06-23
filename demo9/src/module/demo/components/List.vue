@@ -1,5 +1,6 @@
 <template>
     <div class="">
+      <router-link to="/">Home</router-link>
       <div @click="count">点击</div>
       <div>{{list.show}}</div>
       <div>{{not_show}}</div>
@@ -45,12 +46,7 @@ export default {
     getList(){
       let that = this;
       // this.$store.dispatch('getItemList');
-      that.getItemList().then(function (res) {
-          console.log(res);
-          console.log(that);
-      }).catch(function (err) {
-
-      });
+      that.getItemList()
     }
   },
   created(){
